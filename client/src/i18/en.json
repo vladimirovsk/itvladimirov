@@ -1,0 +1,175 @@
+{
+  "navbar": {
+    "glavn": "Home",
+    "directory": "Directory",
+    "project": "Projects",
+    "dashboard": "Dashboard",
+    "kontact": "Contacts",
+    "login":"Login",
+    "logout":"Logout"
+  },
+  "login": {
+    "header": "Enter your details",
+    "login": "Login",
+    "logout": "Cancel",
+    "errorMessageEmail": "enter valid email",
+    "errorMessagePassword": "enter the correct password",
+    "placeholderEmail": "Enter your email",
+    "placeholderPassword": "Password"
+  },
+  "home": {
+    "deviz": {
+      "text1": "I suggest a solution to your problems",
+      "text2": "I delve into the problem, offer the optimal solution, implement the project as soon as possible"
+    },
+    "modul1": {
+    "text1": "Main",
+    "text2": "direction of development",
+    "cards":{
+      "card1": {
+        "header":"Database Development",
+        "text": "One of the main directions of our work is the development of databases and database management systems (DBMS). We work with databases of various architectures (MySQL, MSSQL, Interbase, Firebird, Postgresql). The development of the software interface is carried out at the request of the customer on more convenient software for him, both for the Web interface and for the operating system API."
+      },
+      "card2": {
+        "header":"Server Configuration",
+        "text": "Installation and configuration of server stations with Linux, Windows operating systems according to the customer’s task. Configuring servers with installed Proxmox or VMWare virtualization systems"
+      },
+      "card3": {
+        "header":"Protocol API Development",
+        "text": "Development and use of REST requests in payment systems, in information collection systems of electronic metering devices, as well as the organization of dispatching"
+      },
+      "card4": {
+        "header":"WEB Development",
+        "text": "In today's world it is no longer possible to do without Web applications. I am engaged in FullStack development of Web applications to present your products and services to a wide audience, creating attractive and functional websites."
+      }  
+    }
+
+    },
+    "modul2":{
+      "text1":"Skils",
+      "text2":"Programming languages and development environments",
+        "skils":{
+            "skil0":{
+              "title":"Delphi",
+              "subheader":"Pascal"
+            },
+            "skil1":{
+              "title":"Node JS",
+              "subheader":"JavaScript/REST Api"
+            },
+            "skil2":{
+              "title":"React JS",
+              "subheader":"JavaScript"
+            },
+            "skil3":{
+              "title":"SQL",
+              "subheader":"MSQL/MySQl/Firebird ..."
+            },
+            "skil4":{
+              "title":"HTML/CSS",
+              "subheader":" "
+            },
+            "skil5":{
+              "title":"1C",
+              "subheader":" "
+            },
+            "skil6":{
+              "title":"VMWare/Proxmox",
+              "subheader":"Virtualization"
+            },
+            "skil7":{
+              "title":"Arduino",
+              "subheader":"Atmel"
+            }
+          
+        } 
+    }
+  },
+
+
+  "project": {
+    
+    "row0":{
+      "title": "Website",
+      "text": "Website development from scratch, we use new technologies and JavaScript frameworks, which allows us to write bright and unique websites",
+      "colapseTitle": "Example my pages",
+      "colapseText" : {
+        "row1": "WEBNIT.PL, the site was developed in React JS, Bootstrap, using CSS animation",
+        "row2": "BROGAN.PL site was developed in React JS, Bootstrap, c using CSS animation",
+        "row3": "Server.itservis.od.ua site was developed as a test Dashboard panel, using technologies ReactJS, Redux, Material-UI, REST API, Firebase" 
+      }
+     },
+
+    "row1": {
+      "title": "Payment service",
+      "text": "The payment service is designed to accept payments from the population in favor of utilities, works on the basis of REST requests",
+      "documents":"Documentation",
+      "colapseTitle":"General description",
+      "colapseText": {
+        "row1":"The exchange service was created for the convenience of simultaneous execution of a large number of payments, as well as, for the convenience of implementing client software by transferring part of the client logic to the server.",
+        "row2": "All commands are transmitted via https protocol",
+        "row3": "Used request types:",
+        "row4": "Request data is transmitted in UTF-8 encoding.",
+        "item1": " - GET",
+        "item2": " - POST",
+        "item3": " - DELETE"
+
+      }
+    },
+    "row2": {
+      "title": "Bank payment system",
+      "text": "Software for realizing the possibility of premium payments in bank branches, payment terminals. Allows you to work on very weak communication channels, and provides the ability to make payments online directly from the payer to the service provider."
+    },
+    "row3": {
+      "title": "Modem data transmission",
+      "text": "Designing your own electronic circuit, a full range from manufacturing an electronic device to commissioning, connecting a modem connection to an existing dispatch system",
+      "colapseTitle":"General description",
+      "colapseText": {
+        "row1": "A data transmission device (UP) is designed to retrieve information from heat metering devices and transfer them to a central database for further processing and data visualization.",
+        "row2": "The body of the device is made of plastic and is specially configured for installation in basements. The housing has a sealed outlet for the antenna and terminals for connecting the power supply.",
+        "row3": "The device is equipped with a battery that allows it to continue autonomous operation for 360 hours after disconnecting the external power supply. The UP is equipped with a microprocessor that is programmed individually for the customer, indicating the serial number of the heat meter."
+      }
+
+    },
+    "row4": {
+      "title": "Centralized information processing system",
+      "text": "The system allows access to the database at the same time a large number of users. Each user of the system has his own name and password with certain privileges of access to data. In the usual case, an employee of an enterprise can get access to a specified part of the system data, perform functions characteristic of his duties and receive the necessary reports. A multi-level system for checking user permissions allows you to completely protect the system from unauthorized access.",
+      "colapseTitle": "Centralized system of information processing - CISP",
+      "documents":"Documentation (Russian)",
+      "colapseText":{
+        "row1": "Housing stock accounting - this subsystem provides accounting of the characteristics of residential buildings, other objects and the surrounding area, the history of ongoing and major repairs of buildings and utilities.",
+        "row2": "Subscriber accounting - this subsystem provides direct input and storage of all signs and attributes of subscribers, control of the correctness of data entry, audit of changes made and the formation of reporting forms. It also provides a convenient interface for displaying and searching for the necessary information on the population.",
+        "row3": "Accounting for individual metering devices and their readings. This subsystem provides accounting of devices (their characteristics, installation locations, inventory numbers, verification dates, etc.). It also provides manual input and automatic loading of information from banks and city public service organizations based on meter readings. The system provides a convenient interface for displaying readings in the context of subscribers with automatic indication of erroneously entered data.",
+        "row4": "And much more...",
+        "row5": ""
+      }
+    }
+
+  },
+  "contact": {
+
+    "block1":{
+      "header":"Write to us",
+      "text":"Don't like using contact forms? Please contact us by email, we will respond within one business day."
+    },
+    "block2":{
+      "header":"Where to begin?",
+      "text":"Tell us about your project in any form convenient for you, be it clearly formulated requirements or just an idea. We will select specialists for your needs, taking into account the industry specifics, the method of technological implementation and the nature of the service provided."
+    },
+    "block3":{
+      "header":"Конфиденциальность",
+      "text":"Мы заботимся о конфиденциальности ваших данных, не допуская их несанкционированной передачи третьим лицам. Многоуровневая система безопасности Itransition позволяет избежать потери, порчи либо утечки любой важной информации, предоставленной клиентами"
+    },
+    "block4":{
+      "header":"Hello",
+      "text1":"My name is Sergey, I am a Programmer, with extensive experience in IT infrastructure, I provide a range of services in the field of professional software development, application integration, consulting services in the IT sector, testing, software maintenance and support.",
+      "text2":"Clients get at their disposal a professional with systems thinking and creativity, extensive experience in the development and implementation of corporate projects, as well as small applications in various programming languages (JavaScript, Java, Delphi)."
+    }
+  },
+  "kontact": {
+    "title": "Our contacts",
+    "city": "Krakow",
+    "phone": "+48 791 329 376",
+    "email":"sergey@it-vladimirov.com"
+  }
+}
