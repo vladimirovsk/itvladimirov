@@ -95,12 +95,12 @@ function Project (props)  {
     }
 
     function openBrogan(){
-        const _link= 'https://brogan.webnit.pl';
+        const _link= 'https://brogan.pl';
         window.open(_link, '_blank');
     }
 
     function openServerIt(){
-        const _link= 'https://server.itservis.od.ua';
+        const _link= 'https://server.it-vladimirov.com';
         window.open(_link, '_blank');
     }
 
