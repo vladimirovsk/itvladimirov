@@ -1,7 +1,7 @@
 ###Use Animation from information
-###https://animate.style/
-###https://dbramwell.github.io/react-animate-on-scroll/#initiallyVisible
-###https://github.com/dbramwell/react-animate-on-scroll
+###  https://animate.style/
+### https://dbramwell.github.io/react-animate-on-scroll/#initiallyVisible
+### https://github.com/dbramwell/react-animate-on-scroll
 
 ###map size grid
 ####xs, extra-small: 0px

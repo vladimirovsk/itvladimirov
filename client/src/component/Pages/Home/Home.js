@@ -18,7 +18,8 @@ import imgHtml from '../Home/img/html.png';
 import img1C from '../Home/img/1c.jpeg';
 import imgVm from '../Home/img/vm.jpeg';
 import imgArduino from '../Home/img/arduino2.png';
-import laptopItservis1 from '../Home/img/laptopItservis.jpg';
+//import laptopItservis1 from '../Home/img/laptopItservis.jpg';
+import laptopItservis1 from './img/title_image.jpg';
 import ScrollAnimation from 'react-animate-on-scroll';
 import clsx from "clsx";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
@@ -49,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundImage: `url(${laptopItservis1})`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
+        backgroundPosition: "bottom",
       },
       overlay:{
         position:"absolute",
@@ -276,8 +277,12 @@ function Home (props) {
         img: imgVm,
         expanded: expanded6,
         hidden:true,
-        disabled:true,
-        framework:[{}]
+        disabled:false,
+        framework:[
+            {name:"Windows Server"},
+            {name:"Linux Ubuntu Server"},
+            {name:"Zentual"}
+        ]
     };
     skils[7] = {
         id:7,
@@ -316,8 +321,7 @@ function Home (props) {
     };
 
     const handleExpandClick = (event) => {
-
-         switch (parseInt(event.currentTarget.id)) {
+         switch (parseInt(event.currentTarget.id, 10)) {
              case 0: setExpanded0(!expanded0); break;
              case 1: setExpanded1(!expanded1); break;
              case 2: setExpanded2(!expanded2); break;
@@ -395,7 +399,7 @@ function Home (props) {
                                 <Card className={classes.cardItemSkil}>
                                     <CardHeader
                                         avatar={
-                                            <ScrollAnimation animateIn='animate__swing' >
+                                            <ScrollAnimation animateIn='animate__swing' o>
                                             <Avatar aria-label="recipe" className={classes.avatar} src={skil.img}/>
                                             </ScrollAnimation>
                                             }

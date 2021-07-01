@@ -7,22 +7,22 @@ import Typography from '@material-ui/core/Typography';
 import Tooltip from '@material-ui/core/Tooltip';
 import {Card, CardHeader, CardContent} from '@material-ui/core';
 import renderHTML from 'react-render-html';
-import viberIcon from '../../../assets/viber.png';
-import skypeIcon from '../../../assets/skype.jpg';
+import viberIcon from '../../../assets/viber.svg';
+import skypeIcon from '../../../assets/skype1.svg';
 import facebookIcon from '../../../assets/facebook.png';
-import emailCircle from '../About/img/emailCircle.jpg';
+import emailCircle from '../../../assets/email.svg';
 import questCircle from '../About/img/questCircle.jpeg';
 import {translate} from "react-switch-lang";
 import { Container, Paper } from "@material-ui/core";
-import mePhoto from "../../Pages/About/me3.jpg";
+import mePhoto from "./me1.jpg";
 
 const useStyles = makeStyles((theme) => ({
-    root: {
+      root: {
         flexGrow: 1,
         margin: 'auto',
         borderRadius: theme.spacing(2), // 16px
         transition: '0.3s',
-        boxShadow: '0px 14px 80px rgba(34, 35, 58, 0.2)',
+        //boxShadow: '0px 14px 80px rgba(34, 35, 58, 0.2)',
         position: 'relative',
         marginTop: theme.spacing(8),
         maxWidth: 1000,
@@ -38,6 +38,7 @@ const useStyles = makeStyles((theme) => ({
         //  paddingTop: spacing(2),
         //},
       },
+
       paper: {
         height:"100%",
         width:"100%",
@@ -53,21 +54,31 @@ const useStyles = makeStyles((theme) => ({
           marginTop: theme.spacing(6),
           height: "100%"
       },
+
       item:{
           marginTop:theme.spacing(1),
           flex:1    
       },
 
       avatar: {
-        backgroundColor: theme.palette.common.colorSecondary,
+        boxShadow: '0px 10px 10px rgba(34, 35, 58, 0.4)',
+        width: theme.spacing(20),
+        height: theme.spacing(20),
+      },
+
+      icon: {
+        backgroundColor: "transparent",
+        //boxShadow: theme.shadows[5],
+        boxShadow: '1px 10px 10px rgba(34, 35, 58, 0.4)',
         width: theme.spacing(7),
         height: theme.spacing(7),
-        boxShadow: theme.shadows[10],
       },
-      icon: {
-        width: '3em',
-        heigh: '3em'
-      },
+
+      iconContact: {
+        width: theme.spacing(7),
+        height: theme.spacing(7),
+     },
+
       cardMedia:{
         paddingTop: "56.25%",
         //borderRadius: theme.spacing(2), // 16px   
@@ -92,7 +103,7 @@ const useStyles = makeStyles((theme) => ({
             //maxWidth: 500,
             //marginLeft: 'auto',
             overflow: 'initial',
-            background: theme.palette.primary, //'#ffffff',
+            //background: theme.palette.primary, //'#ffffff',
             //display: 'flex',
             //flexDirection: 'column',
             //alignItems: 'left',
@@ -101,13 +112,12 @@ const useStyles = makeStyles((theme) => ({
       },
 
       cardItem:{
-        borderRadius: theme.spacing(2),  
+        borderRadius: theme.spacing(2),
         width: '100%',
         height: '100%',
         //paddingBottom: theme.spacing(2),
         //marginBottom:theme.spacing(4),
         "&:hover":{
-            //color: "red"
             boxShadow: '0px 14px 14px rgba(34, 35, 58, 0.4)',
           }
       },
@@ -145,21 +155,21 @@ function About (props ) {
                             </Grid>
                         </Grid>
 
-
-                        <Grid container spacing={5} justify="center" >
-
-                            <Grid item>   
+                        <Grid container spacing={5} justify="center">
+                            <Grid item>
                                 <Tooltip title="vladimirov_sk" arrow enterDelay={500} leaveDelay={200} placement="top">
-                                <a href="skype:vladimirov_sk?chat">
-                                    <img src={skypeIcon} className={classes.icon} alt={t('kontact.skype')}/>
-                                </a>
-                                </Tooltip> 
+                                    <a href="skype:vladimirov_sk?chat">
+                                        <img src={skypeIcon} className={classes.iconContact} alt={t('kontact.skype')}/>
+                                    </a>
+                                </Tooltip>
+
                             </Grid>
+
 
                             <Grid item>
                                 <Tooltip title="sergey@it-vladimirov.com" arrow enterDelay={500} leaveDelay={200} placement="top">
                                 <a className="mail" href="mailto:sergey@it-vladimirov.com">
-                                    <img src={emailCircle} alt="sergey@it-vladimirov.com" className={classes.icon}/>
+                                    <img src={emailCircle} alt="sergey@it-vladimirov.com" className={classes.iconContact}/>
                                 </a>
                                 </Tooltip>
                             </Grid>
@@ -167,19 +177,20 @@ function About (props ) {
                             <Grid item>
                                 <Tooltip title="facebook.com/itvladimirov" arrow enterDelay={500} leaveDelay={200} placement="top">
                                 <a href="https://www.facebook.com/itvladimirov" rel="noopener noreferrer" target="_blank" >
-                                <img className={classes.icon} src={facebookIcon} alt="facebook"/>
+                                    <img className={classes.iconContact} src={facebookIcon} alt="facebook"/>
                                 </a>
                                 </Tooltip>
                             </Grid>
-                            <Grid item>
+                            <Grid item style={{backgroundColor:'transparent'}}>
                               <Tooltip title="380975996560" arrow enterDelay={500} leaveDelay={200} placement="top">
                                 <a href="viber://add?number=380975996560">
-                                    <img src={viberIcon} alt="380975996560" className={classes.icon}/>
+                                    <img src={viberIcon} alt="380975996560" className={classes.iconContact}/>
                                 </a>
-                              </Tooltip>  
-                            </Grid>    
+                              </Tooltip>
+                            </Grid>
 
                         </Grid>
+
                         </div>
                         </Paper>
                 </Grid>
@@ -187,13 +198,12 @@ function About (props ) {
                     <Grid 
                         direction="column"
                         container
-                        className={classes.box}
                     >
                     <Grid className={classes.item} item>
                         <Card className={classes.cardItem}>
                             <CardHeader    
                                 avatar={
-                                    <Avatar aria-label="recipe"  className={classes.avatar} src={emailCircle}/>      
+                                    <Avatar aria-label="recipe"  className={classes.icon} src={emailCircle}/>
                                     }
                                     title= {t("contact.block1.header")}   
                                     subheader = {strEmail}                           
@@ -211,7 +221,7 @@ function About (props ) {
                     <Card className={classes.cardItem}>
                             <CardHeader    
                                 avatar={
-                                    <Avatar aria-label="recipe"  className={classes.avatar} src={questCircle}/>      
+                                    <Avatar aria-label="recipe"  className={classes.icon} src={questCircle}/>
                                     }
                                     title= {t("contact.block2.header")}   
                                     subheader = " "                           

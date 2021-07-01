@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/test' , async (req, res, next) => {
 
+router.get('/routeTest/', async (req, res, next) => {
+    console.log('/routeTest')
     res.send('<h1>Route test</h1>');
 });
 
