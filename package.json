@@ -3,9 +3,9 @@
   "version": "2021.04.27",
   "private": true,
   "scripts": {
-    "dev": "nodemon itvladimirov.js",
-    "start": "node itvladimirov.js",
-    "migrate": "node migrate.js"
+    "start": "nodemon client/src/react-scripts start",
+    "migrate": "node migrate.js",
+    "build": "node client/src/react-scripts build"
   },
   "dependencies": {
     "async": "^2.6.2",

@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
         //zIndex: '-1000',
         //marginTop: theme.spacing(6),
         color: theme.palette.common.white,
-        marginBottom: theme.spacing(6),
+        marginBottom: theme.spacing(0),
         backgroundImage: `url(${laptopItservis1})`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
@@ -60,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
         left: 0, 
         backgroundOverlay: "rgba(0,0,0,.9)"
      },
-     mainFuturePostContetnt:{
+      mainFuturePostContetnt:{
          MarginLeftleft:'-500px',
         position:"relative",
         padding:theme.spacing(6),
@@ -73,33 +73,31 @@ const useStyles = makeStyles((theme) => ({
       mainContent:{
         backgroundColor: theme.palette.primary
       },
-
       mainButtons:{
           backgroundColor:theme.palette.secondary
 
       },
-
       cardMedia:{
         paddingTop: "56.25%",
         //borderRadius: theme.spacing(2), // 16px   
         //boxShadow: '0px 4px 4px rgba(34, 35, 58, 0.2)',
           //position: 'relative'
       },
-      
-      CardContent:{
+
+      cardContent:{
             margin:'auto',
             maxWidth: 500,
+            height: '36vh',
             //paddingBottom: theme.spacing(2),
             flexGrow:1,
-
             //heigh:500
       },
 
     CardContentSkills:{
         //margin:'auto',
-        //maxWidth: 500,
         //paddingBottom: theme.spacing(2),
         //flexGrow:1,
+        height: '100%',
         margin: '10px',
         backgroundColor:'#f6f6f6',
         borderRadius: theme.spacing(1),
@@ -108,29 +106,30 @@ const useStyles = makeStyles((theme) => ({
     },
 
       cardGrid:{
-            // 16px
-            transition: '0.3s',
+          flexGrow:1,
+            transition: '0.5s',
             //boxShadow: '0px 14px 80px rgba(34, 35, 58, 0.2)',
             //position: 'relative',
-            //maxWidth: 500,
+            //maxHeight: '500px',
             //marginLeft: 'auto',
-            overflow: 'initial',
+            //overflow: 'initial',
             background: theme.palette.primary, //'#ffffff',
-            //display: 'flex',
-            //flexDirection: 'column',
+            display: 'flex',
+            flexDirection: 'column',
             //alignItems: 'left',
             //paddingBottom: 100,
             //marginTop: theme.spacing(4)
       },
       cardItem:{
-        borderRadius: theme.spacing(2),  
+        borderRadius: theme.spacing(1),
         width: '100%',
-        height: '100%',
+        height: '100%',//'60vh',//'100%',
+
         //paddingBottom: theme.spacing(2),
         //marginBottom:theme.spacing(4),
         "&:hover":{
             //color: "red"
-            boxShadow: '0px 14px 14px rgba(34, 35, 58, 0.4)',
+            boxShadow: '0px 10px 10px rgba(34, 35, 58, 0.4)',
           }
       },
       cardItemSkyl:{
@@ -366,13 +365,12 @@ function Home (props) {
                 <Grid container spacing={2} justify='center'>
                         {cards.map ((card)=> (
                             <Grid item key={card.id} xs={12} md={6} lg={3}>
+                                <ScrollAnimation key = {card.id} animateIn={
+                                    card.id ==='1' || card.id==='2' ? "animate__slideInUp" : "animate__slideInUp"}>
                                 <Card className={classes.cardItem}>
-                                <CardMedia 
-                                        className={classes.cardMedia}
-                                        image={card.img}
-                                        //title="image card"
+                                <CardMedia className={classes.cardMedia} image={card.img}
                                 />
-                                    <CardContent  className={classes.cardContext}>
+                                    <CardContent  className={classes.cardContent}>
                                         <Typography variant="h5" gutterBottom align='center'>
                                             {card.title}
                                         </Typography>
@@ -380,7 +378,9 @@ function Home (props) {
                                             {card.text}
                                         </Typography>
                                     </CardContent>
-                                </Card>    
+                                </Card>
+                                </ScrollAnimation>
+
                             </Grid>
                         ))}
                     </Grid>
@@ -399,7 +399,7 @@ function Home (props) {
                                 <Card className={classes.cardItemSkil}>
                                     <CardHeader
                                         avatar={
-                                            <ScrollAnimation animateIn='animate__swing' o>
+                                            <ScrollAnimation animateIn='animate__swing' >
                                             <Avatar aria-label="recipe" className={classes.avatar} src={skil.img}/>
                                             </ScrollAnimation>
                                             }
