@@ -147,7 +147,7 @@ function About (props ) {
                         </Typography>
                         <hr />
                         <div align="center">
-                        <Grid container justify="center" >
+                        <Grid container justifyContent="center" >
                             <Grid item >    
                                 <Typography variant="h5" component="h1" align="center" style={{marginBottom:'1em'}}>
                                     {t('kontact.title')}
@@ -155,7 +155,7 @@ function About (props ) {
                             </Grid>
                         </Grid>
 
-                        <Grid container spacing={5} justify="center">
+                        <Grid container spacing={5} justifyContent="center">
                             <Grid item>
                                 <Tooltip title="vladimirov_sk" arrow enterDelay={500} leaveDelay={200} placement="top">
                                     <a href="skype:vladimirov_sk?chat">

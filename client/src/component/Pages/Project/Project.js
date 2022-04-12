@@ -22,6 +22,9 @@ import brogan from '../../../assets/img/brogan.png';
 import serverIt from '../../../assets/img/serverIt.png';
 import ScrollAnimation from 'react-animate-on-scroll';
 
+import { useDispatch, useSelector } from 'react-redux';
+import {fetchAllProject} from '../../../store/action/projectAction';
+
 const useStyles = makeStyles((theme) => ({
     mt5:{ marginTop:theme.spacing(8)},
     projectCard:{
@@ -55,6 +58,11 @@ const useStyles = makeStyles((theme) => ({
 
 function Project (props)  {
     const classes = useStyles();
+    const dispatch = useDispatch();
+    const [record, setRecord] = useState([]);
+    const project = useSelector(state => state.project.items);
+    const modify = useSelector(state => state.project.modify);
+
     const [{t}] = useState(props);
     const [expanded0, setExpanded0] = React.useState(false);
     const [expanded1, setExpanded1] = React.useState(false);
@@ -84,7 +92,7 @@ function Project (props)  {
       }
     }
 
-      function raiseInvoiceClicked() {
+    function raiseInvoiceClicked() {
         const url = 'https://drive.google.com/file/d/0B7gHNdjZ_HOscGJ3M1ZyXzRQbVU/view?usp=sharing';
         window.open(url, '_blank');
     }
@@ -104,17 +112,46 @@ function Project (props)  {
         window.open(_link, '_blank');
     }
 
+    const handleFetchProject = async () =>{
+        dispatch(await fetchAllProject())
+    }
+
     React.useEffect(()=>{
-
-    },[])
-
+        handleFetchProject();
+    },[modify])
         return (
             <Container className={classes.mt5}>
-                
-                <Grid container className={classes.container} spacing={5} alignItems='center' justify='center' >
-                    {/** animatePreScroll={true} initiallyVisible={false}  */}
+                <Grid container className={classes.container} spacing={5} alignItems='center' justifyContent='center' >
+                    {project.map((row, index) => {
+                        return (
+                        <Grid key={index} item md={12}>
+                            <ScrollAnimation animateIn='animate__slideInUp' >
+                                <Card className={classes.projectCard}>
+                                    <CardHeader
+                                        avatar={
+                                            <Avatar aria-label="recipe" className={classes.avatar}
+                                                    src={impReact}/>
+                                        }
+                                        title = {row.title}//{t('project.row0.title')}
+                                        subheader = 'React JS, Meterial-UI, Bootstrap, css'
+                                    />
+                                    <CardContent>
+                                        <Grid container direction='row'>
+                                            <Grid item md={2}>
+                                                <img  width={160} height={100} alt={t('project.row0.title')} className="mr-3" src={webdesign} />
+
+                                            </Grid>
+                                            <Grid item md={10}>
+                                                <Typography variant='body1' paragraph align='justify'>{t('project.row0.text')}</Typography>
+                                            </Grid>
+                                        </Grid>
+                                    </CardContent>
+
+                                </Card>
+                            </ScrollAnimation>
+                        </Grid>);
+                    })}
 {/*----Zero Cards --------------------------------*/}
-                     
                     <Grid item md={12} >
                     <ScrollAnimation animateIn='animate__slideInUp' >
                         <Card className={classes.projectCard}> 
@@ -262,7 +299,6 @@ function Project (props)  {
                     </ScrollAnimation>       
                     </Grid>                        
 {/*----Two Cards --------------------------------*/}
-                    
                     <Grid item md={12} >
                     <ScrollAnimation animateIn='animate__slideInUp' >
                         <Card className={classes.projectCard}> 
@@ -307,9 +343,7 @@ function Project (props)  {
                         </Card>
                       </ScrollAnimation>  
                     </Grid>
-                    
 {/*----Three Cards --------------------------------*/}
-                    {/* <ScrollAnimation animateIn='animate__slideInUp' > */}
                     <Grid item md={12} >     
                     <ScrollAnimation animateIn='animate__slideInUp' >      
                         <Card className={classes.projectCard}> 
@@ -378,10 +412,7 @@ function Project (props)  {
                         </Card>
                         </ScrollAnimation>     
                     </Grid>
-                    {/* </ScrollAnimation> */}
-                    
 {/*----Fourth Cards --------------------------------*/}
-                    {/* <ScrollAnimation animateIn='animate__slideInUp'> */}
                     <Grid item md={12} >
                     <ScrollAnimation animateIn='animate__slideInUp' >      
                         <Card className={classes.projectCard}> 
@@ -464,13 +495,7 @@ function Project (props)  {
                         </Card>
                        </ScrollAnimation> 
                     </Grid>
-                    {/* </ScrollAnimation> */}
-                     
-
-                     
-                   
-                  </Grid>  
-                 
+                  </Grid>
             </Container>
         )
 }

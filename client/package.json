@@ -7,6 +7,8 @@
     "@material-ui/icons": "^4.11.2",
     "@material-ui/styles": "^4.11.3",
     "animate.css": "^4.1.1",
+    "axios": "^0.26.1",
+    "clsx": "^1.1.1",
     "create-react-class": "^15.7.0",
     "css-base": "^1.0.0",
     "css-loader": "^0.28.7",
@@ -14,10 +16,14 @@
     "react": "^16.14.0",
     "react-animate-on-scroll": "^2.1.5",
     "react-dom": "^16.14.0",
+    "react-redux": "^7.2.8",
     "react-render-html": "^0.6.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "2.1.8",
-    "react-switch-lang": "^1.0.2"
+    "react-scripts": "^2.1.8",
+    "react-switch-lang": "^1.0.2",
+    "redux": "^4.1.2",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.4.1"
   },
   "scripts": {
     "start": "react-scripts start",
