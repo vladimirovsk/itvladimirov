@@ -18,11 +18,19 @@ export class ProjectService {
 		return await createUser.save();
 	}
 
-	async find(id: string){
-		return this.projectModel.findById(id).exec();
+	async find(id: string): Promise<IProject | null> {
+		return await this.projectModel.findById(id).exec();
 	}
 
 	async findAll(): Promise<IProject[]> {
 		return await this.projectModel.find().exec();
+	}
+
+	async delete(id:string): Promise<{acknowledged:boolean, deletedCount: number}> {
+		return this.projectModel.deleteOne({_id:id});
+	}
+
+	async update(id:string, createProjectDto:CreateProjectDto){
+		return this.projectModel.updateOne({_id:id}, createProjectDto);
 	}
 }
