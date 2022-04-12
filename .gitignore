@@ -4,5 +4,6 @@ config.js
 pgjwt-master.zip
 nbproject
 .DS_Store
-/client/build/*
-/client/node_modules/
+/client/build
+/client/node_modules
+.env
