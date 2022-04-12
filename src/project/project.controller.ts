@@ -1,4 +1,4 @@
-import {Body, Controller, Get, Post, UsePipes, ValidationPipe} from '@nestjs/common';
+import {Body, Controller, Delete, Get, Post, UsePipes, ValidationPipe} from '@nestjs/common';
 import {ProjectService} from './project.service';
 import {CreateProjectDto} from './dto/create-project.dto';
 
@@ -15,5 +15,15 @@ export class ProjectController {
 			return await this.projectService.create(createProjectDto)
 	}
 
+	@Get('/')
+	async getAllProject(){
+		return await this.projectService.findAll();
+	}
+
+
+	@Delete()
+	async deleteProject(){
+
+	}
 
 }
