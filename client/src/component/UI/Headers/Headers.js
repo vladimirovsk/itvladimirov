@@ -180,7 +180,6 @@ const thStyles = makeStyles( theme => ({
   //Для возможности роутинга по страницам без перезагрузки сайта
   useEffect(() => {
    /* [...route].forEach(route => {
-      
       switch (window.location.pathname){
         case `$(route.link)`:
           if (value !== route.activeIndex){
@@ -212,6 +211,7 @@ const thStyles = makeStyles( theme => ({
 
   const lngButton = (
     <React.Fragment>
+      <Button>Login</Button>
       <Button 
         hidden = {false}
         variant="contained"
