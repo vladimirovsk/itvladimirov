@@ -211,11 +211,12 @@ const thStyles = makeStyles( theme => ({
 
   const lngButton = (
     <React.Fragment>
-      <Button
 
-      >{t('navbar.login')}
-      </Button>
-      <Button 
+        <Button
+        >{t('navbar.login')}
+        </Button>
+
+      <Button
         hidden = {false}
         variant="contained"
         color="secondary"
